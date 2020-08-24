@@ -1,0 +1,64 @@
+﻿<div class="container" ng-controller="calculator-controller">
+    <div class="panel panel-info">
+        <div class="panel-heading col-6">
+            <h3>Hardeep Calculator</h3>
+        </div>
+
+        <div class="container text-center">
+            <div class="row text-center">
+                <div class="col-6">
+                    <table width="100%" border="1">
+                        <tr>
+                            <td colspan="4">
+                                <div ng-if="errorMessage" class="alert alert-danger" role="alert">
+                                    {{errorMessage}}
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="4"> <input type="text" class="form-control" ng-model="displayVal" value="{{displayVal}}" disabled /></td>
+                        </tr>
+                        <tr>
+                            <td align="center"> <button type="button" class="form-control all-clear function btn btn-danger btn-sm" value="all-clear" ng-click="clear()">C</button></td>
+                            <td align="center"> <button type="button" class="form-control operator btn btn-info" value="{{operator.remainder}}" ng-click="operatorClick(operator.remainder)">{{operator.remainder}}</button></td>
+                            <td align="center" colspan="2"> <button type="button" class="form-control " ng-click="clearLastValue()"><</button></td>
+                        </tr>
+
+                        <tr>
+                            <td align="center"> <button type="button" value="7" class="form-control btn btn-light waves-effect" ng-click="numberClick(number.seven)">{{number.seven}}</button></td>
+                            <td align="center"> <button type="button" value="8" class="form-control btn btn-light waves-effect" ng-click="numberClick(number.eight)">{{number.eight}}</button></td>
+                            <td align="center"> <button type="button" value="9" class="form-control btn btn-light waves-effect" ng-click="numberClick(number.nine)">{{number.nine}}</button></td>
+                            <td align="center"> <button type="button" class="form-control operator btn btn-info" value="{{operator.add}}" ng-click="operatorClick(operator.add)">{{operator.add}}</button></td>
+                        </tr>
+
+                        <tr>
+                            <td align="center"> <button type="button" value="4" class="form-control btn btn-light waves-effect" ng-click="numberClick(number.four)">{{number.four}}</button></td>
+                            <td align="center"> <button type="button" value="5" class="form-control btn btn-light waves-effect" ng-click="numberClick(number.five)">{{number.five}}</button></td>
+                            <td align="center"> <button type="button" value="6" class="form-control btn btn-light waves-effect" ng-click="numberClick(number.six)">{{number.six}}</button></td>
+                            <td align="center"> <button type="button" class="form-control operator btn btn-info" value="{{operator.subtract}}" ng-click="operatorClick(operator.subtract)">{{operator.subtract}}</button></td>
+                        </tr>
+                        <tr>
+                            <td align="center">  <button type="button" value="1" class=" form-control btn btn-light waves-effect" ng-click="numberClick(number.one)">{{number.one}}</button></td>
+                            <td align="center"> <button type="button" value="2" class="form-control btn btn-light waves-effect" ng-click="numberClick(number.two)">{{number.two}}</button></td>
+                            <td align="center"> <button type="button" value="3" class="form-control btn btn-light waves-effect" ng-click="numberClick(number.three)">{{number.three}}</button></td>
+                            <td align="center"> <button type="button" class="form-control operator btn btn-info" value="{{operator.multiply}}" ng-click="operatorClick(operator.multiply)">{{operator.multiply}}</button></td>
+                        </tr>
+
+                        <tr>
+                            <td align="center">  <button type="button" value="0" class="form-control btn btn-light waves-effect" ng-click="numberClick(number.zero)">{{number.zero}}</button></td>
+                            <td align="center"> <button type="button" class="form-control decimal function btn btn-secondary" ng-click="numberClick(number.dot)">{{number.dot}}</button></td>
+                            <td align="center"> <button type="button" class="form-control all-clear function btn btn-danger btn-sm" value="all-clear" ng-click="clear()">AC</button></td>
+                            <td align="center">  <button type="button" class="form-control operator btn btn-info" value="{{operator.divide}}" ng-click="operatorClick(operator.divide)">{{operator.divide}}</button></td>
+                        </tr>
+
+                        <tr>
+                            <td align="center" colspan="4"> <button type="button" class="form-control equal-sign" value="=" ng-click="performaCalculation(true)"> 
+                                <span ng-if="showSpinner" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>=</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

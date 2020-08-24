@@ -1,0 +1,31 @@
+﻿<div class="container" ng-controller="auditcontroller">
+    <div class="panel panel-info">
+        <div class="panel-heading col-10">
+            <h3>Hardeep Calculator - Audit list</h3>
+        </div>
+        <div class="container text-center">
+            <div class="row text-center">
+                <div class="col-10">
+                    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                        <div ng-if="showSpinner">
+                            <div class="spinner-grow text-primary" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th> IP Address</th>
+                                    <th> Date (utc)</th>
+                                </tr>
+                            </thead>
+                            <tr ng-repeat="item in Auditlist">
+                                <td align="center">{{item.ipAddress}}</td>
+                                <td align="center">{{item.date | date : "medium"}}</td>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
