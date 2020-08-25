@@ -5,12 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Tests\" />
     <Folder Include="wwwroot\AngularJS\config\" />
     <Folder Include="wwwroot\AngularJS\template\" />
     <Folder Include="wwwroot\lib\angularjs\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Chutzpah" Version="4.4.10" />
+    <PackageReference Include="jasmine" Version="2.6.4" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
   </ItemGroup>
 
